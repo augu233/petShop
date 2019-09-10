@@ -1,6 +1,6 @@
 <template>
-	<div class="home">
-		<van-nav-bar title="首页"/>
+	<div class="sell">
+		<van-nav-bar title="义卖"/>
 	</div>
 </template>
 
@@ -18,6 +18,7 @@ export default {
 </script>
 
 <style  scoped>
+
 .van-nav-bar{
 	background-color: #ff6700;
 }
