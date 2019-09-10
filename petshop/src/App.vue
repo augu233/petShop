@@ -12,7 +12,17 @@
     <router-view/>
   </div>
 </template>
+<script>
+import Vue from 'vue';
+import { Button } from 'vant';
+Vue.use(Button);
 
+export default {
+  components: {
+    [Button.name]:Button
+  }
+}
+</script>>
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
