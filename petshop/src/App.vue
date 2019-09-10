@@ -15,14 +15,15 @@
 <script>
 import Vue from 'vue';
 import { Button } from 'vant';
+
 Vue.use(Button);
 
 export default {
   components: {
-    [Button.name]:Button
+    [Button.name]: Button,
   }
 }
-</script>>
+</script>
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
