@@ -1,6 +1,6 @@
 <template>
 	<div class="sell">
-		<van-nav-bar title="义卖"/>
+		<van-nav-bar title="义卖" fixed/>
 	</div>
 </template>
 

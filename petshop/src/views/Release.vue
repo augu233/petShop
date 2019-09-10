@@ -1,6 +1,6 @@
 <template>
 	<div class="release">
-		<van-nav-bar title="发布"/>
+		<van-nav-bar title="发布" fixed/>
 	</div>
 </template>
 

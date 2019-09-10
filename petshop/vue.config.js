@@ -12,5 +12,8 @@ module.exports = {
                 ]
             }
         }
-    }
+    },
+    devServer: {
+        proxy: "http://tjaigz.natappfree.cc/pet/public/index.php"
+    }
 }

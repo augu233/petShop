@@ -40,7 +40,7 @@ export default {
   },
   created () {
     this.pics = api;
-    console.log(this.pics);
+    // console.log(this.pics);
     // this.$axios.get('').then(res=>{
     //   console.log(res);
     //   this.pics = res;
@@ -54,9 +54,9 @@ export default {
 <style scoped>
 .swiper-inner {
   width: 100%;
-  height: 400px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  height: 270px;
+  padding-top: 120px;
+  padding-bottom: 20px;
 }
 .swiper-slide {
   background-position: center;

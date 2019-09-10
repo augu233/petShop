@@ -10,7 +10,7 @@ import PetBottomBar from './components/PetBottomBar/PetBottomBar'
 export default {
 	components: {
 		PetBottomBar,
-	}
+	},
 }
 </script>
 <style>
