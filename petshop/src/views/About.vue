@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <div class="wrap"></div>
     <div class="box"></div>
   </div>
 </template>
