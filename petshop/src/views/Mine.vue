@@ -26,10 +26,6 @@
 			</div>
 		</div>
 		<div class="mine">
-			<van-cell title="我的助养" icon="like-o">
-                <!-- 使用 right-icon 插槽来自定义右侧图标 -->
-                <van-icon slot="right-icon" name="arrow" style="line-height: inherit;"/>
-            </van-cell>
 			<van-cell title="我的领养" icon="flag-o">
                 <van-icon slot="right-icon" name="arrow" style="line-height: inherit;"/>
             </van-cell>
@@ -48,19 +44,10 @@
                 <!-- 使用 right-icon 插槽来自定义右侧图标 -->
                 <van-icon slot="right-icon" name="arrow" style="line-height: inherit;"/>
             </van-cell>
-			<van-cell title="我发布的寻宠" icon="flag-o">
-                <van-icon slot="right-icon" name="arrow" style="line-height: inherit;"/>
-            </van-cell>
-			<van-cell title="我发布的助养" icon="star-o">
-                <van-icon slot="right-icon" name="arrow" style="line-height: inherit;"/>
-            </van-cell>
 		</div>
 		<div class="mymessage">
 			<van-cell title="个人资料" icon="like-o">
                 <!-- 使用 right-icon 插槽来自定义右侧图标 -->
-                <van-icon slot="right-icon" name="arrow" style="line-height: inherit;"/>
-            </van-cell>
-			<van-cell title="基地管理" icon="apps-o">
                 <van-icon slot="right-icon" name="arrow" style="line-height: inherit;"/>
             </van-cell>
 			<van-cell title="领养协议" icon="notes-o">

@@ -3,8 +3,6 @@
 		<van-nav-bar title="发布" fixed :z-index="20"/>
 		<div class="wrap">
 			<div class="picbtn"><img src="../images/img_1.png" alt="" srcset=""></div>
-			<div class="picbtn"><img src="../images/img_2.png" alt="" srcset=""></div>
-			<div class="picbtn"><img src="../images/img_3.png" alt="" srcset=""></div>
 		</div>
 	</div>
 </template>
