@@ -19,4 +19,7 @@ export default {
 	padding: 0;
 	list-style: none;
 }
+body{
+	background-color: rgb(238, 238, 238);
+}
 </style>

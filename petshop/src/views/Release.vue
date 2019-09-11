@@ -1,6 +1,11 @@
 <template>
 	<div class="release">
-		<van-nav-bar title="发布" fixed/>
+		<van-nav-bar title="发布" fixed :z-index="20"/>
+		<div class="wrap">
+			<div class="picbtn"><img src="../images/img_1.png" alt="" srcset=""></div>
+			<div class="picbtn"><img src="../images/img_2.png" alt="" srcset=""></div>
+			<div class="picbtn"><img src="../images/img_3.png" alt="" srcset=""></div>
+		</div>
 	</div>
 </template>
 
@@ -24,5 +29,16 @@ export default {
 }
 .van-nav-bar__title{
 	color: white;
+}
+.wrap{
+	padding: 100px 50px;
+	width: 650px;
+}
+.picbtn{
+	width: 650px;
+}
+.picbtn img{
+	width: 100%;
+	/* box-shadow: darkgrey 10px 10px 30px 5px ; */
 }
 </style>

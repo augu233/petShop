@@ -1,6 +1,6 @@
 <template>
 	<div class="home">
-		<van-nav-bar title="首页" fixed/>
+		<van-nav-bar title="首页" fixed :z-index="20"/>
 		<petSwipe/>
 		<div class="pets-wrap">
 			<template v-for="list in petsWrap">
