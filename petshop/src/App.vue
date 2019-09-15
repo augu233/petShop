@@ -2,7 +2,7 @@
 	<div id="app">
 		<header class="header"></header>
 		<router-view/>
-		<PetBottomBar></PetBottomBar>
+		<PetBottomBar v-if="isShow"></PetBottomBar>
 	</div>
 </template>
 <script>
@@ -11,6 +11,16 @@ export default {
 	components: {
 		PetBottomBar,
 	},
+	computed: {
+		isShow(){
+			let hideList = ["petorder","comments"];
+			if(hideList.indexOf(this.$route.name) != -1){
+				return false;
+			}else{
+				return true;
+			}
+		}
+	}
 }
 </script>
 <style>

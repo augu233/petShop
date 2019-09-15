@@ -31,6 +31,7 @@ export default {
 .pet{
     width: 710px;
     padding: 10px 20px;
+    background-color: white;
 }
 .pic{
     width: 250px;

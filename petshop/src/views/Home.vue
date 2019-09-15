@@ -4,7 +4,7 @@
 		<petSwipe/>
 		<div class="pets-wrap">
 			<template v-for="list in petsWrap">
-				<Pets :key="list.id" :name=list.nick_name :message=list.des :sex=list.sex></Pets>
+				<Pets :key="list.id" :name=list.nick_name :message=list.des :sex=list.sex @click="toOrder(list.id)"></Pets>
 			</template>
 		</div>
 	</div>
@@ -32,6 +32,11 @@ export default {
 			// console.log(res.data);
 			this.petsWrap = res.data;
 		})
+	},
+	methods:{
+		toOrder(){
+			this.$router.push('/petorder')
+		}
 	}
   
 }
