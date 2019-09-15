@@ -1,5 +1,5 @@
 <template>
-    <div class="pet clf">
+    <div class="pet clf" @click="toOrder(id)">
         <div class="pic fl"></div>
         <div class="text fl">
             <p class="name">{{name}}</p>
@@ -15,7 +15,14 @@ export default {
         name: String,
         message: String,
         sex: String,
+        id:Number
     },
+    methods:{
+        toOrder(id){
+            console.log(id)
+			this.$router.push('/petorder')
+		}
+    }
 }
 </script>
 

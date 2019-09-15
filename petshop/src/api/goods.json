@@ -1,0 +1,172 @@
+[
+    {
+        "title": "公益义卖",
+        "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
+        "id":"1",
+        "goods": [
+            {
+                "title": "红狗营养膏",
+                "id": "1",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "65"
+            },
+            {
+                "title": "红狗营养膏222",
+                "id": "2",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "70"
+            }
+        ]
+    },
+    {
+        "title": "狗粮",
+        "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
+        "id":"2",
+        "goods": [
+            {
+                "title": "营养狗粮",
+                "id": "1",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "65"
+            },
+            {
+                "title": "营养狗粮222",
+                "id": "2",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "70"
+            },
+            {
+                "title": "营养狗粮333",
+                "id": "3",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "65"
+            },
+            {
+                "title": "营养狗粮444",
+                "id": "4",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "70"
+            },
+            {
+                "title": "营养狗粮555",
+                "id": "5",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "70"
+            }
+        ]
+    },
+    {
+        "title": "猫粮",
+        "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
+        "id":"3",
+        "goods": [
+            {
+                "title": "营养猫粮",
+                "id": "1",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "65"
+            },
+            {
+                "title": "营养猫粮222",
+                "id": "2",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "70"
+            }
+        ]
+    },
+    {
+        "title": "零食罐头",
+        "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
+        "id":"4",
+        "goods": [
+            {
+                "title": "零食罐头",
+                "id": "1",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "65"
+            },
+            {
+                "title": "零食罐头222",
+                "id": "2",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "70"
+            }
+        ]
+    },
+    {
+        "title": "驱虫保健",
+        "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
+        "id":"5",
+        "goods": [
+            {
+                "title": "驱虫保健",
+                "id": "1",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "65"
+            },
+            {
+                "title": "驱虫保健2222",
+                "id": "2",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "70"
+            }
+        ]
+    },
+    {
+        "title": "清洁洗护",
+        "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
+        "id":"6",
+        "goods": [
+            {
+                "title": "清洁洗护",
+                "id": "1",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "65"
+            },
+            {
+                "title": "清洁洗护2222",
+                "id": "2",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "70"
+            }
+        ]
+    },
+    {
+        "title": "日常用品",
+        "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
+        "id":"7",
+        "goods": [
+            {
+                "title": "日常用品",
+                "id": "1",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "65"
+            },
+            {
+                "title": "日常用品222",
+                "id": "2",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "70"
+            }
+        ]
+    },
+    {
+        "title": "玩具周边",
+        "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
+        "id":"8",
+        "goods": [
+            {
+                "title": "玩具周边",
+                "id": "1",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "65"
+            },
+            {
+                "title": "玩具周边2222",
+                "id": "2",
+                "thumb": "http://c1.cdn.goumin.com/cms/detail/day_170328/20170328_546d69b.png",
+                "price": "70"
+            }
+        ]
+    }
+]
