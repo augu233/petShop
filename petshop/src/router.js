@@ -6,6 +6,8 @@ import Sell from './views/Sell'
 import Mine from './views/Mine'
 import Search from './views/Search'
 import GoodInside from './views/goodInside'
+import PetOrder from './views/PetOrder'
+import Comments from './views/Comments'
 
 Vue.use(Router)
 
@@ -46,6 +48,16 @@ export default new Router({
       path: '/mine',
       name: 'mine',
       component: Mine
+    },
+    {
+      path: '/petorder',
+      name: 'petorder',
+      component: PetOrder
+    },
+    {
+      path: '/comments',
+      name: 'comments',
+      component: Comments
     },
     // {
     //   path: '/about',

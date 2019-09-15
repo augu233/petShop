@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import api from '@/api/goods.json'
 export default {
     name: 'goodDetail',
     data(){
@@ -22,7 +21,6 @@ export default {
         
     },
     created(){
-        this.pics = api;
         // this.$axios.get('').then(res=>{
         //     console.log(res);
         // })
