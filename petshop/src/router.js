@@ -4,6 +4,8 @@ import Home from './views/Home'
 import Release from './views/Release'
 import Sell from './views/Sell'
 import Mine from './views/Mine'
+import Search from './views/Search'
+import GoodInside from './views/goodInside'
 
 Vue.use(Router)
 
@@ -29,6 +31,16 @@ export default new Router({
       path: '/sell',
       name: 'sell',
       component: Sell
+    },
+    {
+      path: '/goodinside',
+      name: 'goodinside',
+      component: GoodInside
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: Search
     },
     {
       path: '/mine',
