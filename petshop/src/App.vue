@@ -13,7 +13,7 @@ export default {
 	},
 	computed: {
 		isShow(){
-			let hideList = ["petorder","comments"];
+			let hideList = ["petorder","comments","goodslist"];
 			if(hideList.indexOf(this.$route.name) != -1){
 				return false;
 			}else{

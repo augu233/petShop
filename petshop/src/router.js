@@ -8,6 +8,7 @@ import Search from './views/Search'
 import GoodInside from './views/goodInside'
 import PetOrder from './views/PetOrder'
 import Comments from './views/Comments'
+import GoodsList from './views/GoodsList'
 
 Vue.use(Router)
 
@@ -58,6 +59,11 @@ export default new Router({
       path: '/comments',
       name: 'comments',
       component: Comments
+    },
+    {
+      path: '/goodslist',
+      name: 'goodslist',
+      component: GoodsList
     },
     // {
     //   path: '/about',
