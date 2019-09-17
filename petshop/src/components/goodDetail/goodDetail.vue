@@ -27,8 +27,8 @@ export default {
     },
     methods:{
         detail(id){
-           
-            this.$router.push({path:'/goodInside',query:{id:id}});
+           console.log(id)
+            // this.$router.push({path:'/goodInside',query:{id:id}});
         }
     }
 }
