@@ -10,6 +10,7 @@ import Comments from './views/Comments'
 import Register from './views/Register'
 import GoodClassfyAll from './views/GoodClassfyAll'
 import Login from './views/Login'
+import GoodsList from './views/GoodsList'
 
 Vue.use(Router)
 
@@ -70,6 +71,11 @@ export default new Router({
       path: '/goodclassfyall',
       name: 'goodclassfyall',
       component: GoodClassfyAll
+    },
+    {
+      path: '/goodslist',
+      name: 'goodslist',
+      component: GoodsList
     },
     // {
     //   path: '/about',
