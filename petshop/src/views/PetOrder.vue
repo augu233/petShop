@@ -1,6 +1,6 @@
 <template>
 	<div class="petorder">
-		<van-nav-bar title="宠物帮" fixed :z-index="20"/>
+		<van-nav-bar title="宠物帮" fixed :z-index="20" left-arrow @click-left="onBack"/>
 		<!-- 轮播图 -->
 		<div class="swiper">
 			swiper
@@ -123,6 +123,9 @@ export default {
 		},
 		toHome(){
 			this.$router.push('/')
+		},
+		onBack(){
+			this.$router.go(-1);
 		}
 	}
   
