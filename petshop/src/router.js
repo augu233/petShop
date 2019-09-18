@@ -5,9 +5,11 @@ import Release from './views/Release'
 import Sell from './views/Sell'
 import Mine from './views/Mine'
 import Search from './views/Search'
-import GoodInside from './views/goodInside'
 import PetOrder from './views/PetOrder'
 import Comments from './views/Comments'
+import Register from './views/Register'
+import GoodClassfyAll from './views/GoodClassfyAll'
+import Login from './views/Login'
 import GoodsList from './views/GoodsList'
 
 Vue.use(Router)
@@ -36,11 +38,6 @@ export default new Router({
       component: Sell
     },
     {
-      path: '/goodinside',
-      name: 'goodinside',
-      component: GoodInside
-    },
-    {
       path: '/search',
       name: 'search',
       component: Search
@@ -59,6 +56,21 @@ export default new Router({
       path: '/comments',
       name: 'comments',
       component: Comments
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/goodclassfyall',
+      name: 'goodclassfyall',
+      component: GoodClassfyAll
     },
     {
       path: '/goodslist',

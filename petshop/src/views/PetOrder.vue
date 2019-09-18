@@ -1,6 +1,10 @@
 <template>
 	<div class="petorder">
+<<<<<<< HEAD
 		<petnavbar title="宠物帮"></petnavbar>
+=======
+		<van-nav-bar title="宠物帮" fixed :z-index="20" left-arrow @click-left="onBack"/>
+>>>>>>> ac1b9a200af777a775dc3af475ec63cd8b718b93
 		<!-- 轮播图 -->
 		<div class="swiper">
 			swiper
@@ -135,6 +139,9 @@ export default {
 		},
 		toHome(){
 			this.$router.push('/')
+		},
+		onBack(){
+			this.$router.go(-1);
 		}
 	},
 	filters:{
