@@ -4,7 +4,7 @@
 		<petSwipe/>
 		<div class="pets-wrap">
 			<template v-for="list in petsWrap">
-				<Pets :key="list.id" :id=list.id :name=list.nick_name :message=list.des :sex=list.sex ></Pets>
+				<Pets :key="list.id" :list="list"></Pets>
 			</template>
 		</div>
 	</div>
@@ -29,7 +29,7 @@ export default {
 	},
 	created(){
 		this.$axios.get('/api/user/pets').then(res=>{
-			// console.log(res.data);
+			console.log(res.data);
 			this.petsWrap = res.data;
 		})
 	},
