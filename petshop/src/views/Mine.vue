@@ -26,31 +26,31 @@
 			</div>
 		</div>
 		<div class="mine">
-			<van-cell title="我的领养" icon="flag-o">
+			<van-cell title="我的领养" icon="flag-o" is-link to="/mypets">
                 <van-icon slot="right-icon" name="arrow" style="line-height: inherit;"/>
             </van-cell>
-			<van-cell title="我的关注" icon="star-o">
+			<van-cell title="我的关注" icon="star-o" is-link to="/myfocus">
                 <van-icon slot="right-icon" name="arrow" style="line-height: inherit;"/>
             </van-cell>
-			<van-cell title="我的订单" icon="orders-o">
+			<van-cell title="我的订单" icon="orders-o" is-link to="/myorder">
                 <van-icon slot="right-icon" name="arrow" style="line-height: inherit;"/>
             </van-cell>
-			<van-cell title="我的收货地址" icon="location-o">
+			<van-cell title="我的收货地址" icon="location-o" is-link to="/myaddress">
                 <van-icon slot="right-icon" name="arrow" style="line-height: inherit;"/>
             </van-cell>
 		</div>
 		<div class="myrelease">
-			<van-cell title="我发布的送养" icon="like-o">
+			<van-cell title="我发布的送养" icon="like-o" is-link to="/myrelease">
                 <!-- 使用 right-icon 插槽来自定义右侧图标 -->
                 <van-icon slot="right-icon" name="arrow" style="line-height: inherit;"/>
             </van-cell>
 		</div>
 		<div class="mymessage">
-			<van-cell title="个人资料" icon="like-o">
+			<van-cell title="个人资料" icon="like-o" is-link to="/mydata">
                 <!-- 使用 right-icon 插槽来自定义右侧图标 -->
                 <van-icon slot="right-icon" name="arrow" style="line-height: inherit;"/>
             </van-cell>
-			<van-cell title="领养协议" icon="notes-o">
+			<van-cell title="领养协议" icon="notes-o" is-link to="/agreement">
                 <van-icon slot="right-icon" name="arrow" style="line-height: inherit;"/>
             </van-cell>
 		</div>
