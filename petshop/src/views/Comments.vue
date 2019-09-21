@@ -19,7 +19,8 @@ export default {
 </script>
 
 <style  scoped>
-body{
+.comments{
+	height: 100vh;
 	background-color: white;
 }
 </style>

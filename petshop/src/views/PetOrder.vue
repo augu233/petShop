@@ -1,6 +1,6 @@
 <template>
 	<div class="petorder">
-		<van-nav-bar title="宠物帮" fixed :z-index="20" left-arrow @click-left="onBack"/>
+		<petnavbar title="宠物帮"></petnavbar>
 		<!-- 轮播图 -->
 		<div class="swiper">
 			swiper
@@ -8,7 +8,7 @@
 
 		<!-- 详细信息 -->
 		<div class="message">
-			<div class="tag-name">北京市的狗狗泰迪正在找家</div>
+			<div class="tag-name">北京市的狗狗{{petmes.nick_name}}正在找家</div>
 			<div class="mes-1">
 				<p class="browse">浏览量：74</p>
 				<p class="charm">魅力值：0</p>
@@ -16,15 +16,15 @@
 			</div>
 			<div class="mes-2">
 				<p class="name">泰迪</p>
-				<p class="sex">女孩</p>
-				<p class="age">1个月</p>
-				<p class="insect">未驱虫</p>
-				<p class="sterilization">未绝育</p>
-				<p class="immune">未免疫</p>
+				<p class="sex">{{petmes.sex | sex}}</p>
+				<p class="age">{{petmes.age}}个月</p>
+				<p class="insect"><span v-if="petmes.expelling">已驱虫</span><span v-else>未驱虫</span></p>
+				<p class="sterilization"><span v-if="petmes.sterilization">已绝育</span><span v-else>未绝育</span></p>
+				<p class="immune"><span v-if="petmes.vaccine">已免疫</span><span v-else>未免疫</span></p>
 			</div>
 			<div class="story">
 				<div class="title">|&nbsp;&nbsp;TA的故事</div>
-				<p>中秋节吃了晚饭带孩子去公园玩，长椅边上有个袋子，我看见袋子动了，一看是两只狗。仔细一看是两只泰迪，一只黑色，一只灰色。由于我家有4只猫。只能勉强留一只灰色，决定黑色送出。<br>黑色泰迪情况：应该一个月以上，下巴有一小块白毛，胸口有一块白毛，耳朵有咖色看不出来，未断尾，母</p>
+				<p>{{petmes.des}}</p>
 			</div>
 		</div>
 
@@ -62,7 +62,7 @@
 			<van-tabs v-model="active">
 				<van-tab title="同城推荐">
 					<template v-for="list in petsWrap">
-						<Pets :key="list.id" :name=list.nick_name :message=list.des :sex=list.sex @click="toOrder(list.id)"></Pets>
+						<Pets :key="list.id" :list="list"></Pets>
 					</template>
 				</van-tab>
 				<van-tab title="关注">
@@ -93,6 +93,7 @@ import {
   GoodsActionButton
 } from 'vant';
 import Pets from '@/components/Pets/Pets'
+import petnavbar from '../components/PetNavbar/PetNavbar'
 
 export default {
 	components:{
@@ -102,19 +103,30 @@ export default {
 		[GoodsAction.name]: GoodsAction,
 		[GoodsActionIcon.name]: GoodsActionIcon,
 		[GoodsActionButton.name]: GoodsActionButton,
-		Pets
+		Pets,
+		petnavbar,
 	},
 	data() {
 		return {
 			active: 0,
 			petsWrap: [],
+			petmes: '',
 		};
 	},
 	created(){
 		this.$axios.get('/api/user/pets').then(res=>{
-			// console.log(res.data);
+			console.log(res.data);
 			this.petsWrap = res.data;
 		})
+
+		console.log(this.$route.params)
+		this.petmes = this.$route.params
+		// let id = this.$route.query.id;
+		
+        // this.$axios.get("/api/user/pets/"+id).then(res=>{
+        //    	console.log(res);
+        //     // this.venue = res.data;
+        // })
 	},
 	methods:{
 		toComments(){
@@ -126,6 +138,17 @@ export default {
 		},
 		onBack(){
 			this.$router.go(-1);
+		}
+	},
+	filters:{
+		sex:function(sex){
+			if(sex == "w"){
+				return '女孩'
+			}else if(sex == 'm'){
+				return '男孩'
+			}else{
+				return '未知'
+			}
 		}
 	}
   

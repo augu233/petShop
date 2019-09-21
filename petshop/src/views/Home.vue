@@ -4,7 +4,7 @@
 		<petSwipe/>
 		<div class="pets-wrap">
 			<template v-for="list in petsWrap">
-				<Pets :key="list.id" :id=list.id :name=list.nick_name :message=list.des :sex=list.sex ></Pets>
+				<Pets :key="list.id" :list="list"></Pets>
 			</template>
 		</div>
 	</div>

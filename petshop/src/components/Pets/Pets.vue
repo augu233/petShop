@@ -1,9 +1,9 @@
 <template>
-    <div class="pet clf" @click="toOrder(id)">
+    <div class="pet clf" @click="toOrder(list.id)">
         <div class="pic fl"></div>
         <div class="text fl">
-            <p class="name">{{name}}</p>
-            <p class="message">{{message}}</p>
+            <p class="name">{{list.nick_name}}</p>
+            <p class="message">{{list.des}}</p>
         </div>
     </div>
 </template>
@@ -12,15 +12,13 @@
 export default {
     name: 'bottombar',
     props: {
-        name: String,
-        message: String,
-        sex: String,
-        id:Number
+        list: Object,
     },
     methods:{
         toOrder(id){
+            console.log(this.list)
             console.log(id)
-			this.$router.push('/petorder')
+			this.$router.push({name:'petorder', params:this.list})
 		}
     }
 }
