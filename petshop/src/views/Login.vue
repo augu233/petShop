@@ -50,13 +50,13 @@ export default {
                 email:"",
                 password:""
             },
-            path:"/about"
+            path:"/mine"
         }
     },
     created(){
         this.params.email = this.$route.params.email;
         this.params.password = this.$route.params.password;
-        this.path = this.$route.params.path?this.$route.params.path :"/about";
+        this.path = this.$route.params.path?this.$route.params.path :"/mine";
     },
     methods:{
         onBack(){
@@ -65,7 +65,7 @@ export default {
 
         login(){
            
-            this.$axios.post("/user/login",this.params).then(res=>{
+            this.$axios.post("/api/user/login",this.params).then(res=>{
                  if(res.data.code==200){
                     console.log(res); 
                     this.$toast(res.data.msg);
