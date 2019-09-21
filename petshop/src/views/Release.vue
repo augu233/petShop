@@ -8,59 +8,59 @@
       </div>
       <div class="group">
         <van-action-sheet v-model="show" :actions="actions" @select="onSelect" />
+        <van-popup v-model="showPicker" position="bottom">
+          <van-picker
+            show-toolbar
+            title="选择年龄"
+            :columns="columns"
+            @cancel="onCancel"
+            @confirm="onConfirm"
+          />
+        </van-popup>
+        <van-action-sheet v-model="showsex" :actions="actionsex" @select="onSelectsex" />
         <van-cell-group>
           <van-field
-            v-model="addgroup.petname"
+            v-model="pets.nick_name"
             required
             clearable
             label="昵称"
             placeholder="宠物昵称(限五个字符)"
             maxlength="5"
           />
-          <van-cell title="种类" :value="addgroup.petType" @click="changeType" />
-          <van-switch-cell active-color="#ff6700" v-model="addgroup.changeAge" title="年龄" />
-          <van-switch-cell active-color="#ff6700" v-model="addgroup.changeSex" title="性别" />
-          <van-switch-cell active-color="#ff6700" v-model="addgroup.changeMed" title="是否注射疫苗" />
-          <van-switch-cell active-color="#ff6700" v-model="addgroup.changeMan" title="是否绝育" />
-          <van-switch-cell active-color="#ff6700" v-model="addgroup.changeBug" title="是否驱虫" />
-          <van-switch-cell active-color="#ff6700" v-model="addgroup.changeFree" title="是否免费" />
-		<van-field
-			v-model="addgroup.message"
-			label="留言"
-			type="textarea"
-			placeholder="请输入留言"
-			rows="1"
-			autosize
-		/>
-		<van-field
-            v-model="addgroup.mastername"
-            required
-            clearable
-            label="姓名"
-            placeholder="请输入姓名"
-            maxlength="5"
-          />
-		  <van-field
-            v-model="addgroup.selfphone"
-            required
-            clearable
-            label="手机号"
-            placeholder="请输入手机号"
-            maxlength="11"
-          />
-		  <van-field
-            v-model="addgroup.wechat"
-            required
-            clearable
-            label="微信"
-            placeholder="请输入微信"
-          />
-          <van-switch-cell active-color="#ff6700" v-model="addgroup.outphone" title="是否显示电话号码" />
-          <van-switch-cell active-color="#ff6700" v-model="addgroup.outwechat" title="是否显示微信" />
+          <van-cell title="种类" :value="pets.type_id" @click="changeType" />
+          <van-cell :value="pets.age" title="年龄" @click="changeage"/>
+          <van-cell :value="petsex ? petsex : '请选择性别'" title="性别" @click="changesex"/>
+          <van-switch-cell active-color="#ff6700" v-model="tvaccine" title="是否注射疫苗" />
+          <van-switch-cell active-color="#ff6700" v-model="tsterilization" title="是否绝育" />
+          <van-switch-cell active-color="#ff6700" v-model="texpelling" title="是否驱虫" />
         </van-cell-group>
       </div>
+      <div class="Adoption">
+        <p class="adoptiontitle">领养条件</p>
+        <van-checkbox-group v-model="result">
+          <van-checkbox
+            v-for="(check, index) in adoption"
+            :key="index"
+             v-model="checked"
+            :name="check.text"
+            checked-color="#ff6700"
+            @click="getcheckId(check.id)"
+          >{{ check.text }}</van-checkbox>
+        </van-checkbox-group>
+      </div>
+      <div class="itstory">
+        <p class="story">TA的故事</p>
+        <van-field
+            v-model="pets.des"
+            label="留言"
+            type="textarea"
+            placeholder="请输入留言"
+            rows="1"
+            autosize
+          />
+      </div>
       <div class="sub">
-        <van-button type="warning" size="large" @click="submit">警告按钮</van-button>
+        <van-button type="warning" size="large" @click="submit">发布送养</van-button>
       </div>
     </div>
   </div>
@@ -77,30 +77,41 @@ import {
   ActionSheet,
   Toast,
   SwitchCell,
-  Button
+  Button,
+  Checkbox,
+  CheckboxGroup,
+  Picker,
+  Popup
 } from "vant";
 
 export default {
   data() {
     return {
-      addgroup: {
-        petname: "",
-        petType: "选择宠物类型",
-        changeAge: true,
-        changeSex: true,
-        changeMed: true,
-        changeMan: true,
-        changeBug: true,
-        changeFree: true,
-		message: "",
-		mastername:'',
-		selfphone:'',
-		wechat:'',
-		outphone:true,
-		outwechat:true
+      pets: {
+        nick_name: "",
+        type_id: "选择宠物类型",
+        age: '请选择年龄',
+        sex: '',
+        vaccine: '1',
+        sterilization: '1',
+        expelling: '1',
+        des: "",
       },
+      petsex: '',
+      tvaccine: true,
+      tsterilization: true,
+      texpelling: true,
       show: false,
-      actions: [{ name: "猫猫" }, { name: "狗狗" }]
+      showage: false,
+      showsex: false,
+      showPicker:false,
+      result: [],
+      resultId:[],
+      checked:true,
+      actions: [{ name: "猫猫" }, { name: "狗狗" }],
+      actionsex: [{ name: '女孩' }, { name: '男孩' }],
+      adoption: [],
+      columns: [1]
     };
   },
   components: {
@@ -112,32 +123,93 @@ export default {
     [ActionSheet.name]: ActionSheet,
     [Toast.name]: Toast,
     [SwitchCell.name]: SwitchCell,
-    [Button.name]: Button
+    [Button.name]: Button,
+    [Checkbox.name]: Checkbox,
+    [CheckboxGroup.name]: CheckboxGroup,
+    [Picker.name]:Picker,
+    [Popup.name]:Popup
   },
   methods: {
     afterRead(file) {
       // 此时可以自行将文件上传至服务器
       console.log(file);
     },
+    getcheckId(id){
+      console.log(id)
+      if(this.resultId.length<1){
+        this.resultId.push(id);
+      }else{
+        for(let i = 0 ; i < this.resultId.length ; i++){
+          console.log(this.resultId.indexOf(id)==-1)
+          if(this.resultId.indexOf(id)==-1){
+            this.resultId.push(id);
+            break
+          }else{
+            console.log(this.resultId.indexOf(id))
+            this.resultId.splice(this.resultId.indexOf(id),1);
+            console.log('shanchu')
+            break
+          }
+        }
+      }
+      console.log(this.resultId);
+    },
     changeType() {
       this.show = true;
     },
-    changeAge() {},
+    changeage() {
+      this.showPicker = true;
+    },
+    changesex() {
+      this.showsex = true;
+    },
+    onConfirm(value) {
+      this.showPicker = false;
+      Toast(`年龄${value}`);
+      this.pets.age = value;
+    },
+    onCancel() {
+      this.showPicker = false;
+    },
     onSelect(item) {
       // 点击选项时默认不会关闭菜单，可以手动关闭
       this.show = false;
-      this.petType = item.name;
-      console.log(this.petType);
-      this.$toast(this.petType);
+      this.pets.type_id = item.name;
+      console.log(this.pets.type_id);
+      this.$toast(this.pets.type_id);
+    },
+    onSelectsex(item) {
+      // 点击选项时默认不会关闭菜单，可以手动关闭
+      this.showsex = false;
+      this.petsex = item.name;
+      if(item.name == '女孩'){
+        this.pets.sex = 'w'
+      }else{
+        this.pets.sex = 'm'
+      }
+      this.$toast(this.petsex);
+    },
+    onChange(picker, value, index) {
+      Toast(`当前值：${value}, 当前索引：${index}`);
     },
     submit() {
-      console.log(1);
-      this.$axios.post("/api/pet/adopts", this.addgroup).then(res => {
-        console.log(res);
-      });
+      this.tvaccine ? this.pets.vaccine = '1':this.pets.vaccine = '0';
+      this.tsterilization ?this.pets.sterilization = '1':this.pets.sterilization = '0';
+      this.texpelling ?this.pets.expelling = '1':this.pets.expelling = '0';
+      console.log(this.pets.vaccine,this.pets.sterilization,this.pets.expelling)
+
+      this.$axios.post('/api/pet/save',this.pets,this.result).then(res=>{
+        console.log(res)
+      })
+      console.log(this.pets,this.result);
     }
   },
-  created() {}
+  created() {
+    this.$axios.post("/api/pet/adopts").then(res => {
+      this.adoption = res.data;
+      console.log(res);
+    });
+  }
 };
 </script>
 
@@ -152,12 +224,39 @@ export default {
   padding: 100px 50px;
   width: 650px;
 }
-.upload-img{
-	text-align: center;
-	margin-bottom: 25px;
+.upload-img {
+  text-align: center;
+  margin-bottom: 25px;
 }
-.sub{
-	margin-top: 40px;
-	margin-bottom: 80px;
+.sub {
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+.group {
+  padding: 30px 0;
+  background-color: #fff;
+  border-radius: 15px;
+}
+.Adoption {
+  margin-top: 20px;
+  font-size: 28px;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px 20px;
+}
+.Adoption .adoptiontitle {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+.van-checkbox {
+  height: 100%;
+  margin-bottom: 10px;
+}
+.itstory{
+  margin-top: 20px;
+}
+.story{
+  font-size: 32px;
+  margin-bottom: 40px; 
 }
 </style>

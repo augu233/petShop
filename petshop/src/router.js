@@ -11,6 +11,13 @@ import Register from './views/Register'
 import GoodClassfyAll from './views/GoodClassfyAll'
 import Login from './views/Login'
 import GoodsList from './views/GoodsList'
+import Myrelease from './views/MyLink/Myrelease'
+import Mypets from './views/MyLink/Mypets'
+import Myorder from './views/MyLink/Myorder'
+import Myfocus from './views/MyLink/Myfocus'
+import Mydata from './views/MyLink/Mydata'
+import Myaddress from './views/MyLink/Myaddress'
+import Agreement from './views/MyLink/Agreement'
 
 Vue.use(Router)
 
@@ -76,6 +83,41 @@ export default new Router({
       path: '/goodslist',
       name: 'goodslist',
       component: GoodsList
+    },
+    {
+      path: '/agreement',
+      name: 'agreement',
+      component: Agreement
+    },
+    {
+      path: '/myaddress',
+      name: 'myaddress',
+      component: Myaddress
+    },
+    {
+      path: '/mydata',
+      name: 'mydata',
+      component: Mydata
+    },
+    {
+      path: '/myfocus',
+      name: 'myfocus',
+      component: Myfocus
+    },
+    {
+      path: '/myorder',
+      name: 'myorder',
+      component: Myorder
+    },
+    {
+      path: '/mypets',
+      name: 'mypets',
+      component: Mypets
+    },
+    {
+      path: '/myrelease',
+      name: 'myrelease',
+      component: Myrelease
     },
     // {
     //   path: '/about',

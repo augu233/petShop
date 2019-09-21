@@ -74,7 +74,7 @@ export default {
         if (res.data.code == 200) {
           console.log(res);
           this.$toast.success(res.data.msg);
-          // this.$router.push({name:"login",params:this.params})
+          this.$router.push({name:"login",params:this.params})
         }
       });
     }
