@@ -61,9 +61,9 @@
 		<div class="">
 			<van-tabs v-model="active">
 				<van-tab title="同城推荐">
-					<template v-for="list in petsWrap">
+					<!-- <template v-for="list in petsWrap">
 						<Pets :key="list.id" :list="list"></Pets>
-					</template>
+					</template> -->
 				</van-tab>
 				<van-tab title="关注">
 					<div class="tis">暂无关注</div>
@@ -117,12 +117,12 @@ export default {
 		};
 	},
 	created(){
-		this.$axios.get('/api/user/pets').then(res=>{
-			console.log(res.data);
-			this.petsWrap = res.data;
-		})
+		// this.$axios.get('/api/user/pets').then(res=>{
+		// 	console.log(res.data);
+		// 	this.petsWrap = res.data.data;
+		// })
 
-		console.log(this.$route.params)
+		// console.log(this.$route.params)
 		this.petmes = this.$route.params
 		// let id = this.$route.query.id;
 		

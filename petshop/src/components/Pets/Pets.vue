@@ -21,8 +21,8 @@ export default {
     },
     methods:{
         toOrder(id){
-            console.log(this.list)
-            console.log(id)
+            // console.log(this.list)
+            // console.log(id)
 			this.$router.push({name:'petorder', params:this.list})
 		}
     }

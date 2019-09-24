@@ -44,9 +44,9 @@ export default {
 	},
 	methods:{
 		getData(){
-			console.log(this.page)
+			// console.log(this.page)
 			this.$axios.get( "/api/user/pets?page="+this.page).then(res=>{
-				console.log(res.data.data);
+				// console.log(res.data.data);
 				// [...this.venues,...res.data.data]
 				this.petsWrap = this.petsWrap.concat(res.data.data); 
 

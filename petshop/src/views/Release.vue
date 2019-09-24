@@ -133,10 +133,10 @@ export default {
   methods: {
     afterRead(file) {
       // 此时可以自行将文件上传至服务器
-      console.log(file);
+      // console.log(file);
     },
     getcheckId(id){
-      console.log(id)
+      // console.log(id)
       if(this.alladopts.length<1){
         this.alladopts.push(id);
       }else{
@@ -146,16 +146,16 @@ export default {
             this.alladopts.push(id);
             break
           }else{
-            console.log(this.alladopts.indexOf(id))
+            // console.log(this.alladopts.indexOf(id))
             this.alladopts.splice(this.alladopts.indexOf(id),1);
-            console.log('shanchu')
+            // console.log('shanchu')
             break
           }
           // this.pets.adopts = this.alladopts[i] + '&'
         }
       }
       this.pets.adopts = this.alladopts.join('&')
-      console.log(this.pets.adopts);
+      // console.log(this.pets.adopts);
     },
     changeType() {
       this.show = true;
@@ -178,7 +178,7 @@ export default {
       // 点击选项时默认不会关闭菜单，可以手动关闭
       this.show = false;
       this.pets.type_id = item.name;
-      console.log(this.pets.type_id);
+      // console.log(this.pets.type_id);
       this.$toast(this.pets.type_id);
     },
     onSelectsex(item) {
@@ -199,18 +199,18 @@ export default {
       this.tvaccine ? this.pets.vaccine = '1':this.pets.vaccine = '0';
       this.tsterilization ?this.pets.sterilization = '1':this.pets.sterilization = '0';
       this.texpelling ?this.pets.expelling = '1':this.pets.expelling = '0';
-      console.log(this.pets.vaccine,this.pets.sterilization,this.pets.expelling)
+      // console.log(this.pets.vaccine,this.pets.sterilization,this.pets.expelling)
 
       this.$axios.post('/api/pet/save',this.pets).then(res=>{
-        console.log(res)
+        // console.log(res)
       })
-      console.log(this.pets,this.pets.adopts);
+      // console.log(this.pets,this.pets.adopts);
     }
   },
   created() {
     this.$axios.post("/api/pet/adopts").then(res => {
       this.adoption = res.data;
-      console.log(res);
+      // console.log(res);
     });
   }
 };
