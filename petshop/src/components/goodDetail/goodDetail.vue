@@ -1,10 +1,8 @@
 <template>
-    <div>
-        <div class="allgoods" @click="detail(all.id)">
-            <div class="goodimg"><img :src="all.thumb" alt=""></div>
-            <p class="alltitle">{{ all.title }}</p>
-            <p class="price">￥{{ all.price }}</p>
-        </div>
+    <div class="allgoods" @click="detail(all)">
+        <div class="goodimg"><img src="@/images/user.jpg" alt=""></div>
+        <p class="alltitle">{{ all.title }}</p>
+        <p class="price">￥{{ all.price }}</p>
     </div>
 </template>
 
@@ -26,9 +24,9 @@ export default {
         // })
     },
     methods:{
-        detail(id){
-           console.log(id)
-            // this.$router.push({path:'/goodInside',query:{id:id}});
+        detail(all){
+        //    console.log(all)
+            this.$router.push({path:'/goodslist',query:{all:all}});
         }
     }
 }
@@ -52,10 +50,14 @@ export default {
     height: 350px;
 }
 .alltitle{
-    font-size: 30px;
+    font-size: 24px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    width:375px;
 }
 .price{
-    font-size: 30px;
+    font-size: 24px;
     color: #ff6700;
 }
 </style>

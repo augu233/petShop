@@ -14,6 +14,6 @@ module.exports = {
         }
     },
     devServer: {
-        proxy: "http://n9kvgc.natappfree.cc/pet/public/index.php"
+        proxy: "http://iv4ncz.natappfree.cc/pet/public/index.php"
     }
 }

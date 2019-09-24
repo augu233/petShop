@@ -78,7 +78,7 @@
 
 		<van-goods-action>
 			<van-goods-action-icon icon="wap-home" text="返回首页" @click="toHome"/>
-			<van-goods-action-icon icon="like-o" text="关注" />
+			<van-goods-action-icon icon="like-o" text="关注" @click="focus"/>
 			<van-goods-action-button color="#ff6700" type="danger" text="申请领养" />
 		</van-goods-action>
 	</div>
@@ -111,6 +111,9 @@ export default {
 			active: 0,
 			petsWrap: [],
 			petmes: '',
+			user_pet:{
+				id: '',
+			},
 		};
 	},
 	created(){
@@ -138,6 +141,13 @@ export default {
 		},
 		onBack(){
 			this.$router.go(-1);
+		},
+		focus(){
+			console.log(this.petmes.id)
+			this.user_pet.id = this.petmes.id
+			this.$axios.post('/api/user/like', this.user_pet).then(res=>{
+				console.log(res)
+			})
 		}
 	},
 	filters:{

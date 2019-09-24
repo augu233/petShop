@@ -22,5 +22,7 @@ export default {
 .wrap{
     margin-top: 92px;
     margin-bottom: 100px;
+    text-align: center;
+    padding-top: 50px;
 }
 </style>

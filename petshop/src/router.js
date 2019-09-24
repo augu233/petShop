@@ -18,6 +18,7 @@ import Myfocus from './views/MyLink/Myfocus'
 import Mydata from './views/MyLink/Mydata'
 import Myaddress from './views/MyLink/Myaddress'
 import Agreement from './views/MyLink/Agreement'
+import Addaddress from './views/MyLink/Addaddress'
 
 Vue.use(Router)
 
@@ -37,7 +38,10 @@ export default new Router({
     {
       path: '/release',
       name: 'release',
-      component: Release
+      component: Release,
+      meta:{
+        requireAuth: true
+      }
     },
     {
       path: '/sell',
@@ -52,7 +56,10 @@ export default new Router({
     {
       path: '/mine',
       name: 'mine',
-      component: Mine
+      component: Mine,
+      meta:{
+        requireAuth: true
+      }
     },
     {
       path: '/petorder',
@@ -87,37 +94,66 @@ export default new Router({
     {
       path: '/agreement',
       name: 'agreement',
-      component: Agreement
+      component: Agreement,
+      meta:{
+        requireAuth: true
+      }
     },
     {
       path: '/myaddress',
       name: 'myaddress',
-      component: Myaddress
+      component: Myaddress,
+      meta:{
+        requireAuth: true
+      }
     },
     {
       path: '/mydata',
       name: 'mydata',
-      component: Mydata
+      component: Mydata,
+      meta:{
+        requireAuth: true
+      }
     },
     {
       path: '/myfocus',
       name: 'myfocus',
-      component: Myfocus
+      component: Myfocus,
+      meta:{
+        requireAuth: true
+      }
     },
     {
       path: '/myorder',
       name: 'myorder',
-      component: Myorder
+      component: Myorder,
+      meta:{
+        requireAuth: true
+      }
     },
     {
       path: '/mypets',
       name: 'mypets',
-      component: Mypets
+      component: Mypets,
+      meta:{
+        requireAuth: true
+      }
     },
     {
       path: '/myrelease',
       name: 'myrelease',
-      component: Myrelease
+      component: Myrelease,
+      meta:{
+        requireAuth: true
+      }
+    },
+    {
+      path: '/addaddress',
+      name: 'addaddress',
+      component: Addaddress,
+      meta:{
+        requireAuth: true
+      }
     },
     // {
     //   path: '/about',

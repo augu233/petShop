@@ -14,12 +14,75 @@
 	<div class="goods-class">
 		<goodsClass/>
 	</div>
-	<div class="gooddetail clearfix" v-for="item in pics" :key="item.id">
+	<div class="gooddetail clearfix">
 		<div class="cardhead">
-			<p>"	{{ item.title }}	"</p>
+			<p>"公益义卖"</p>
 		</div>
-		<template v-for="(all,index) in item.goods">
-			<goodDetail :all = "all" :key="index"/>
+		<template v-for="(all,index) in goods">
+			<goodDetail v-if="all.good_classifie_id == 1" :all = "all" :key="index"/>
+		</template>
+	</div>
+
+	<div class="gooddetail clearfix">
+		<div class="cardhead">
+			<p>"狗粮"</p>
+		</div>
+		<template v-for="(all,index) in goods">
+			<goodDetail v-if="all.good_classifie_id == 2" :all = "all" :key="index"/>
+		</template>
+	</div>
+
+	<div class="gooddetail clearfix">
+		<div class="cardhead">
+			<p>"猫粮"</p>
+		</div>
+		<template v-for="(all,index) in goods">
+			<goodDetail v-if="all.good_classifie_id == 3" :all = "all" :key="index"/>
+		</template>
+	</div>
+
+	<div class="gooddetail clearfix">
+		<div class="cardhead">
+			<p>"零食罐头"</p>
+		</div>
+		<template v-for="(all,index) in goods">
+			<goodDetail v-if="all.good_classifie_id == 4" :all = "all" :key="index"/>
+		</template>
+	</div>
+
+	<div class="gooddetail clearfix">
+		<div class="cardhead">
+			<p>"驱虫保健"</p>
+		</div>
+		<template v-for="(all,index) in goods">
+			<goodDetail v-if="all.good_classifie_id == 5" :all = "all" :key="index"/>
+		</template>
+	</div>
+
+	<div class="gooddetail clearfix">
+		<div class="cardhead">
+			<p>"清洁洗护"</p>
+		</div>
+		<template v-for="(all,index) in goods">
+			<goodDetail v-if="all.good_classifie_id == 6" :all = "all" :key="index"/>
+		</template>
+	</div>
+
+	<div class="gooddetail clearfix">
+		<div class="cardhead">
+			<p>"日常用品"</p>
+		</div>
+		<template v-for="(all,index) in goods">
+			<goodDetail v-if="all.good_classifie_id == 7" :all = "all" :key="index"/>
+		</template>
+	</div>
+
+	<div class="gooddetail clearfix">
+		<div class="cardhead">
+			<p>"玩具周彪"</p>
+		</div>
+		<template v-for="(all,index) in goods">
+			<goodDetail v-if="all.good_classifie_id == 8" :all = "all" :key="index"/>
 		</template>
 	</div>
   </div>
@@ -38,7 +101,7 @@ export default {
   data(){
 	  return{
 		  value:'',
-		  pics:[]
+		  goods:[],
 	  }
   },
   components: {
@@ -54,10 +117,10 @@ export default {
 	  }
   },
   created(){
-        this.pics = api;
-        // this.$axios.get('').then(res=>{
-        //     console.log(res);
-        // })
+        this.$axios.get('/api/good/goods').then(res=>{
+			this.goods = res.data
+            console.log(res);
+        })
     }
 };
 </script>

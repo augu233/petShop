@@ -6,6 +6,7 @@
 			<template v-for="list in petsWrap">
 				<Pets :key="list.id" :list="list"></Pets>
 			</template>
+			<button type="button" @click="onclick">jiazaigengduo</button>
 		</div>
 	</div>
 </template>
@@ -25,16 +26,40 @@ export default {
 	data(){
 		return{
 			petsWrap: [],
+			page: 1
 		}
 	},
 	created(){
-		this.$axios.get('/api/user/pets').then(res=>{
-			console.log(res.data);
-			this.petsWrap = res.data;
-		})
+		// this.$axios.get('/api/user/pets').then(res=>{
+		// 	console.log(res.data);
+		// 	this.petsWrap = res.data.data;
+			
+		// })
+		// this.$axios.get( "/api/user/pets?page="+this.page).then(res=>{
+		// 	//console.log(res.data);
+		// 	// [...this.venues,...res.data.data]
+		// 	this.venues = this.venues.concat(res.data.data); 
+		// 	this.page++;
+		// });
+	},
+	mounted(){
+		this.getData()
 	},
 	methods:{
-		
+		getData(){
+			console.log(this.page)
+			this.$axios.get( "/api/user/pets?page="+this.page).then(res=>{
+				console.log(res.data.data);
+				// [...this.venues,...res.data.data]
+				this.petsWrap = this.petsWrap.concat(res.data.data); 
+
+
+				this.page++;
+			});
+		},
+		onclick(){
+			this.getData()
+		}
 	}
   
 }

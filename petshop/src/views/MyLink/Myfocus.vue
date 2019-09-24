@@ -14,6 +14,11 @@ export default {
     name: 'Myfocus',
     components:{
         petnavbar,
+    },
+    created(){
+        this.$axios.post('/api/user/my_like').then(res=>{
+            console.log(res.data)
+        })
     }
 }
 </script>
@@ -22,5 +27,7 @@ export default {
 .wrap{
     margin-top: 92px;
     margin-bottom: 100px;
+    text-align: center;
+    padding-top: 50px;
 }
 </style>

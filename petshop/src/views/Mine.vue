@@ -7,7 +7,7 @@
 				<div class="toast">本中心已成功送养了&nbsp;<span class="ff6700">17962</span>&nbsp;只宠物！</div>
 				<div class="user">
 					<div class="pic"><img src="../images/user.jpg" alt=""></div>
-					<div class="name">好的名字可以让你的朋友更容易记住你</div>
+					<div class="name">{{name.name}}</div>
 					<ul>
 						<li class="money">
 							<div>0</div>
@@ -69,11 +69,23 @@ import { Cell, CellGroup, Icon } from 'vant';
 
 Vue.use(NavBar);
 export default {
+	data(){
+		return{
+			name:'',
+		}
+	},
 	components:{
 		[NavBar.name]: NavBar,
 		[Cell.name]: Cell,
 		[CellGroup.name]: CellGroup,
 		[Icon.name]: Icon,
+	},
+	created(){
+		let user =  localStorage.getItem("user");
+		if(user){
+			this.name = JSON.parse(user);
+			console.log(this.name.name)
+		}
 	}
   
 }

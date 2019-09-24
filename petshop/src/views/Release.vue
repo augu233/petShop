@@ -96,7 +96,9 @@ export default {
         sterilization: '1',
         expelling: '1',
         des: "",
+        adopts:''
       },
+      alladopts:[],
       petsex: '',
       tvaccine: true,
       tsterilization: true,
@@ -106,7 +108,6 @@ export default {
       showsex: false,
       showPicker:false,
       result: [],
-      resultId:[],
       checked:true,
       actions: [{ name: "猫猫" }, { name: "狗狗" }],
       actionsex: [{ name: '女孩' }, { name: '男孩' }],
@@ -136,23 +137,25 @@ export default {
     },
     getcheckId(id){
       console.log(id)
-      if(this.resultId.length<1){
-        this.resultId.push(id);
+      if(this.alladopts.length<1){
+        this.alladopts.push(id);
       }else{
-        for(let i = 0 ; i < this.resultId.length ; i++){
-          console.log(this.resultId.indexOf(id)==-1)
-          if(this.resultId.indexOf(id)==-1){
-            this.resultId.push(id);
+        for(let i = 0 ; i < this.alladopts.length ; i++){
+          console.log(this.alladopts.indexOf(id)==-1)
+          if(this.alladopts.indexOf(id)==-1){
+            this.alladopts.push(id);
             break
           }else{
-            console.log(this.resultId.indexOf(id))
-            this.resultId.splice(this.resultId.indexOf(id),1);
+            console.log(this.alladopts.indexOf(id))
+            this.alladopts.splice(this.alladopts.indexOf(id),1);
             console.log('shanchu')
             break
           }
+          // this.pets.adopts = this.alladopts[i] + '&'
         }
       }
-      console.log(this.resultId);
+      this.pets.adopts = this.alladopts.join('&')
+      console.log(this.pets.adopts);
     },
     changeType() {
       this.show = true;
@@ -198,10 +201,10 @@ export default {
       this.texpelling ?this.pets.expelling = '1':this.pets.expelling = '0';
       console.log(this.pets.vaccine,this.pets.sterilization,this.pets.expelling)
 
-      this.$axios.post('/api/pet/save',this.pets,this.result).then(res=>{
+      this.$axios.post('/api/pet/save',this.pets).then(res=>{
         console.log(res)
       })
-      console.log(this.pets,this.result);
+      console.log(this.pets,this.pets.adopts);
     }
   },
   created() {

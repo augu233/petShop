@@ -2,7 +2,7 @@
     {
         "title": "公益义卖",
         "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
-        "id":"1",
+        "id":1,
         "goods": [
             {
                 "title": "红狗营养膏",
@@ -21,7 +21,7 @@
     {
         "title": "狗粮",
         "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
-        "id":"2",
+        "id":2,
         "goods": [
             {
                 "title": "营养狗粮",
@@ -58,7 +58,7 @@
     {
         "title": "猫粮",
         "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
-        "id":"3",
+        "id":3,
         "goods": [
             {
                 "title": "营养猫粮",
@@ -77,7 +77,7 @@
     {
         "title": "零食罐头",
         "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
-        "id":"4",
+        "id":4,
         "goods": [
             {
                 "title": "零食罐头",
@@ -96,7 +96,7 @@
     {
         "title": "驱虫保健",
         "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
-        "id":"5",
+        "id":5,
         "goods": [
             {
                 "title": "驱虫保健",
@@ -115,7 +115,7 @@
     {
         "title": "清洁洗护",
         "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
-        "id":"6",
+        "id":6,
         "goods": [
             {
                 "title": "清洁洗护",
@@ -134,7 +134,7 @@
     {
         "title": "日常用品",
         "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
-        "id":"7",
+        "id":7,
         "goods": [
             {
                 "title": "日常用品",
@@ -153,7 +153,7 @@
     {
         "title": "玩具周边",
         "titlepic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568534185419&di=bdfeda70bde92f45e32fa040b90a776b&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h638%2F20171222%2F5938-fypvuqf1024620.jpg",
-        "id":"8",
+        "id":8,
         "goods": [
             {
                 "title": "玩具周边",

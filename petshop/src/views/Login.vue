@@ -28,7 +28,8 @@
                 />
                 </van-cell-group>
                 <div class="form-group">
-                     <van-button type="warning" size="large" @click="login">登 录</van-button>
+                     <van-button class="mb-20" type="primary" size="large" @click="login">登 录</van-button>
+                     <van-button type="warning" size="large" @click="register">立 即 注 册</van-button>
                 </div>
                 
         </div>
@@ -48,7 +49,8 @@ export default {
         return {
             params:{
                 email:"",
-                password:""
+                password:"",
+                name:""
             },
             path:"/mine"
         }
@@ -74,6 +76,9 @@ export default {
                  }
             });
 
+        },
+        register(){
+            this.$router.push('/register')
         }
 
     },
@@ -108,5 +113,8 @@ export default {
 }
 .form-group{
     padding-top:100px;
+}
+.mb-20{
+    margin-bottom: 20px;
 }
 </style>
