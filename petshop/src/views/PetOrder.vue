@@ -118,7 +118,7 @@ export default {
 	},
 	created(){
 		this.$axios.get('/api/user/pets').then(res=>{
-			console.log(res.data);
+			// console.log(res.data);
 			this.petsWrap = res.data;
 		})
 
