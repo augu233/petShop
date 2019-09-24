@@ -110,7 +110,7 @@ export default {
 		return {
 			active: 0,
 			petsWrap: [],
-			petmes: '',
+			petmes: [],
 			user_pet:{
 				id: '',
 			},
