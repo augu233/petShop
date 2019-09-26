@@ -1,6 +1,6 @@
 <template>
     <div class="pet clf" @click="toOrder(list.id)">
-        <div class="pic fl"></div>
+        <div class="pic fl"><img :src="list.pics" alt=""></div>
         <div class="text fl">
             <p class="name">{{list.nick_name}}</p>
             <p class="message">{{list.des}}</p>
@@ -23,7 +23,7 @@ export default {
         toOrder(id){
             // console.log(this.list)
             // console.log(id)
-			this.$router.push({name:'petorder', params:this.list})
+            this.$router.push({name:'petorder', params:this.list})
 		}
     }
 }

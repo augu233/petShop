@@ -46,9 +46,9 @@ export default {
 		getData(){
 			// console.log(this.page)
 			this.$axios.get( "/api/user/pets?page="+this.page).then(res=>{
-				// console.log(res.data.data);
 				// [...this.venues,...res.data.data]
 				this.petsWrap = this.petsWrap.concat(res.data.data); 
+				console.log(this.petsWrap);
 
 
 				this.page++;
@@ -93,7 +93,8 @@ export default {
 			return scrollHeight;
 		},
 		onscroll() {
-			if (this.getScrollHeight() == this.getWindowHeight() + this.getDocumentTop()) {
+			// console.log(this.getScrollHeight(),this.getWindowHeight(),this.getDocumentTop())
+			if (this.getScrollHeight() == this.getWindowHeight() + parseInt(this.getDocumentTop()) + 1) {
 				//当滚动条到底时,这里是触发内容
 				//异步请求数据,局部刷新dom
 				// console.log(1)
@@ -103,6 +104,7 @@ export default {
 	},
 	mounted() {
 		this.getData()
+		// console.log('mounted')
         window.addEventListener('scroll', this.onscroll);
     },
     destroyed(){
