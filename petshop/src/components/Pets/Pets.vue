@@ -1,9 +1,14 @@
 <template>
     <div class="pet clf" @click="toOrder(list.id)">
-        <div class="pic fl"></div>
+        <div class="pic fl"><img :src="list.pics" alt=""></div>
         <div class="text fl">
             <p class="name">{{list.nick_name}}</p>
             <p class="message">{{list.des}}</p>
+            <div class="tag">
+                <span class="expelling" v-if="list.expelling == 1">已驱虫</span>
+                <span class="sterilization" v-if="list.sterilization == 1">已绝育</span>
+                <span class="vaccine" v-if="list.vaccine == 1">已免疫</span>
+            </div>
         </div>
     </div>
 </template>
@@ -16,9 +21,9 @@ export default {
     },
     methods:{
         toOrder(id){
-            console.log(this.list)
-            console.log(id)
-			this.$router.push({name:'petorder', params:this.list})
+            // console.log(this.list)
+            // console.log(id)
+            this.$router.push({name:'petorder', params:this.list})
 		}
     }
 }
@@ -46,7 +51,10 @@ export default {
 }
 .text{
     width: 430px;
+    height: 250px;
     font-size: 36px;
+    position: relative;
+
 }
 .message{
     font-size: 28px;
@@ -58,5 +66,31 @@ export default {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     overflow: hidden;
+}
+.tag{
+    font-size: 24px;
+    position: relative;
+    bottom: -30px;
+    left: 0;
+}
+span{
+    display: inline-block;
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background-color: cyan;
+    border-radius: 14px;
+    color: white;
+    margin: 0 10px;
+}
+.expelling{
+    background-color: rgb(255, 176, 72);
+}
+.sterilization{
+    background-color: rgb(69, 95, 212);
+}
+.vaccine{
+    background-color: rgb(149, 233, 115);
 }
 </style>

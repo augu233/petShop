@@ -119,7 +119,7 @@ export default {
   created(){
         this.$axios.get('/api/good/goods').then(res=>{
 			this.goods = res.data
-            console.log(res);
+            // console.log(res);
         })
     }
 };

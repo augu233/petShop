@@ -6,7 +6,7 @@
 			<template v-for="list in petsWrap">
 				<Pets :key="list.id" :list="list"></Pets>
 			</template>
-			<button type="button" @click="onclick">jiazaigengduo</button>
+			<!-- <button type="button" @click="onclick">jiazaigengduo</button> -->
 		</div>
 	</div>
 </template>
@@ -42,25 +42,74 @@ export default {
 		// 	this.page++;
 		// });
 	},
-	mounted(){
-		this.getData()
-	},
 	methods:{
 		getData(){
-			console.log(this.page)
+			// console.log(this.page)
 			this.$axios.get( "/api/user/pets?page="+this.page).then(res=>{
-				console.log(res.data.data);
 				// [...this.venues,...res.data.data]
 				this.petsWrap = this.petsWrap.concat(res.data.data); 
+				console.log(this.petsWrap);
 
 
 				this.page++;
 			});
 		},
-		onclick(){
-			this.getData()
+		// onclick(){
+		// 	this.getData()
+		// 	this.getDocumentTop()
+		// 	this.getWindowHeight()
+		// 	this.getScrollHeight()
+		// },
+		getDocumentTop() {
+			var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+			if (document.body) {
+				bodyScrollTop = document.body.scrollTop;
+			}
+			if (document.documentElement) {
+				documentScrollTop = document.documentElement.scrollTop;
+			}
+			scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+			return scrollTop;
+		},
+		getWindowHeight() {
+			var windowHeight = 0;
+			if (document.compatMode == "CSS1Compat") {
+				windowHeight = document.documentElement.clientHeight;
+			} else {
+				windowHeight = document.body.clientHeight;
+			}
+			return windowHeight;
+		},
+		getScrollHeight() {
+			var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
+			if (document.body) {
+				bodyScrollHeight = document.body.scrollHeight;
+			}
+
+			if (document.documentElement) {
+				documentScrollHeight = document.documentElement.scrollHeight;
+			}
+			scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+			return scrollHeight;
+		},
+		onscroll() {
+			// console.log(this.getScrollHeight(),this.getWindowHeight(),this.getDocumentTop())
+			if (this.getScrollHeight() == this.getWindowHeight() + parseInt(this.getDocumentTop()) + 1) {
+				//当滚动条到底时,这里是触发内容
+				//异步请求数据,局部刷新dom
+				// console.log(1)
+				this.getData();
+			}
 		}
-	}
+	},
+	mounted() {
+		this.getData()
+		// console.log('mounted')
+        window.addEventListener('scroll', this.onscroll);
+    },
+    destroyed(){
+        window.removeEventListener('scroll', this.onscroll);
+    },
   
 }
 </script>
