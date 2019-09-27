@@ -13,18 +13,17 @@
             </li>
           </ul>
           <div class="form-group">
-            <input
-              type="file"
-              multiple
-              ref="input"
-              value="上传文件"
-              name="myfile"
-              class="upload"
-              @change="select"
-            />
+              <input
+                type="file"
+                multiple
+                ref="input"
+                value="上传宠物照片"
+                name="myfile"
+                class="upload"
+                @change="select"
+              />
           </div>
         </div>
-        <p>添加图片</p>
       </div>
       <div class="group">
         <van-action-sheet v-model="show" :actions="actions" @select="onSelect" />
@@ -117,7 +116,7 @@ export default {
         expelling: "1",
         des: "",
         adopts: "",
-        pics: [],
+        pics: []
       },
       imgSrc: [],
       alladopts: [],
@@ -204,25 +203,6 @@ export default {
       this.pets.pics.splice(index, 1);
     },
 
-    afterRead(file) {
-      let params = new FormData(); //创建form对象
-      params.append("file", file); //通过append向form对象添加数据//第一个参数字符串可以填任意命名，第二个根据对象属性来找到file
-      let config = {
-        headers: {
-          //添加请求头
-          Authorization:
-            "Bearer " + window.localStorage.getItem("managementToken"),
-            "Content-Type": "multipart/form-data"
-        }
-      };
-      console.log(file, params);
-      // this.$axios.get('/api/user/pet_pics', params, config).then(res => {
-      //     console.log(res);
-      //   }).catch(err => {
-      //     console.log(err)
-      //   });
-    },
-
     getcheckId(id) {
       // console.log(id)
       if (this.alladopts.length < 1) {
@@ -298,16 +278,15 @@ export default {
 
       this.pets.pics.forEach(file => {
         // console.log(file);
-        fileForm.append('myfile[]', file);
-        
+        fileForm.append("myfile[]", file);
       });
 
-      fileForm.append("pets",JSON.stringify(this.pets));
+      fileForm.append("pets", JSON.stringify(this.pets));
 
       //console.log(fileForm.get("myfile[]"),fileForm.get("message{}"));
-      this.$axios.post('/api/pet/save',fileForm).then(res=>{
-          console.log(res)
-      })
+      this.$axios.post("/api/pet/save", fileForm).then(res => {
+        console.log(res);
+      });
       // console.log(this.pets,this.pets.adopts);
     }
   },
@@ -366,7 +345,7 @@ export default {
   font-size: 32px;
   margin-bottom: 40px;
 }
-.form-group input{
+.form-group input {
   width: 100%;
   font-size: 40px;
   text-align: center;

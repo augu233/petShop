@@ -26,7 +26,7 @@ export default {
 	data(){
 		return{
 			petsWrap: [],
-			page: 1
+			page: 1,
 		}
 	},
 	created(){
@@ -50,6 +50,8 @@ export default {
 				this.petsWrap = this.petsWrap.concat(res.data.data); 
 				console.log(this.petsWrap);
 
+				// this.petspic = this.petsWrap[0].pics.split("&");
+				// console.log(this.petspic);
 
 				this.page++;
 			});

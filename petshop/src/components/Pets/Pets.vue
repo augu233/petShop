@@ -1,6 +1,6 @@
 <template>
     <div class="pet clf" @click="toOrder(list.id)">
-        <div class="pic fl"><img :src="list.pics" alt=""></div>
+        <div class="pic fl"><img :src="petspic[0]" alt=""></div>
         <div class="text fl">
             <p class="name">{{list.nick_name}}</p>
             <p class="message">{{list.des}}</p>
@@ -19,12 +19,24 @@ export default {
     props: {
         list: Object,
     },
+    data(){
+        return{
+            petspic:[],
+        }
+    },
     methods:{
         toOrder(id){
             // console.log(this.list)
             // console.log(id)
             this.$router.push({name:'petorder', params:this.list})
 		}
+    },
+    created(){
+        if(this.list.pics){
+            // console.log(this.list.pics)
+            this.petspic = this.list.pics.split("&");
+        }
+        console.log(this.petspic)
     }
 }
 </script>

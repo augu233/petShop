@@ -19,6 +19,7 @@ import Mydata from './views/MyLink/Mydata'
 import Myaddress from './views/MyLink/Myaddress'
 import Agreement from './views/MyLink/Agreement'
 import Addaddress from './views/MyLink/Addaddress'
+import Buynow from './views/Buynow'
 
 Vue.use(Router)
 
@@ -151,6 +152,14 @@ export default new Router({
       path: '/addaddress',
       name: 'addaddress',
       component: Addaddress,
+      meta:{
+        requireAuth: true
+      }
+    },
+    {
+      path: '/buynow',
+      name: 'buynow',
+      component: Buynow,
       meta:{
         requireAuth: true
       }
